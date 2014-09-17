@@ -1,7 +1,7 @@
 exports.settings = {
     "status_message": "A demo Node.js Google Talk Bot",
     "client": {
-        "jid": "n.js.bot@gmail.com",
+        "jid": "nodespabot@gmail.com",
         "password": process.env.bot_password,
         "host": "talk.google.com",
         "port": 5222,

@@ -1,0 +1,19 @@
+{
+  "name": "NJSBot-PFG",
+  "description": "AI bot made for Final Degree Project of Ángel González based on Hollywell Google Talk Bot",
+  "version": "0.0.0",
+  "license": "GPLv3",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aglezabad/njsrebot-pfg.git"
+  },
+  "scripts": {
+    "start": "node njsbot.js"
+  },
+  "dependencies": {
+    "node-xmpp": "latest",
+    "i18n": "latest",
+    "colors": "latest"
+  }
+}

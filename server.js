@@ -2,12 +2,12 @@
 
 const config = require('./config.js').settings;
 var express = require('express');
-var app = express.createServer();
-app.configure(function(){
-  app.set('view engine', 'jade');
-  app.set('views', __dirname + '/views');
-  app.use("/css", express.static(__dirname + '/css'));
-});
+var app = express();
+
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
+app.use("/css", express.static(__dirname + '/css'));
+
 
 app.get('/', function(req, res){
   var data = {

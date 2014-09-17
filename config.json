@@ -1,0 +1,10 @@
+{
+	"locale": "en",
+	"level": "debug",
+	"client":{
+		"id": "nodespabot@gmail.com",
+		"host": "talk.google.com",
+		"port": 5222,
+		"reconnect": true
+	}
+}
