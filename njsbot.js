@@ -1,21 +1,18 @@
 'use strict';
 
+//Dependencies
+var messages = require("./core/logger/Messages");
 
-function checkArgs(argv){
-    if(argv.length !== 4){
+//Configurations
+var config = require("./config.json");
+var pack = require("./package.json");
 
-    }
-}
-
+//function startBot: Fución encargada de arrancar el bot
 function startBot(){
-    var config = require("./config.json");
-    var pack = require("./package.json");
-    var messages = require("./core/Messages")(config.level, config.locale);
-
+    messages(process.env.LEVEL || config.level, process.env.LOCALE || config.locale);
     messages.greeting(pack.name, pack.version);
-}
 
-function setStatusMessage(){
+    messages.debug("Loading dependencies...");
 
 }
 
