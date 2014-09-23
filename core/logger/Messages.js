@@ -32,7 +32,7 @@ function printLog(level, message){
 	var levels = ["critical", "error", "warn", "info", "debug"];
 	//--If logLevel === level -> put message
 	if(levels.indexOf(level) >= levels.indexOf(logLevel)){
-		if(levels.indexOf(level) >= levels.indexOf("error")){
+		if(levels.indexOf(level) <= levels.indexOf("error")){
 			console.error((level.toUpperCase() + ": ").red.bold + i18n.__(message));
 		} else if(level.indexOf(level) === levels.indexOf("warn")){
 			console.warn((level.toUpperCase() + ": ").yellow.bold + i18n.__(message));

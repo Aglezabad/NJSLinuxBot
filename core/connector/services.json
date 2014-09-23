@@ -1,0 +1,7 @@
+{
+	"hangouts":{
+		"host": "talk.google.com",
+		"port": 5222,
+		"reconnect": true
+	}		
+}

@@ -13,6 +13,7 @@ function startBot(){
     messages.greeting(pack.name, pack.version);
 
     messages.debug("Loading dependencies...");
+    
 
 }
 
