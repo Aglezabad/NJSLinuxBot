@@ -7,13 +7,41 @@ var messages = require("./core/logger/Messages");
 var config = require("./config.json");
 var pack = require("./package.json");
 
-//function startBot: Fución encargada de arrancar el bot
+//function startBot: Función encargada de arrancar el bot
 function startBot(){
-    messages(process.env.LEVEL || config.level, process.env.LOCALE || config.locale);
-    messages.greeting(pack.name, pack.version);
+	messages(process.env.LEVEL || config.level, process.env.LOCALE || config.locale);
+	messages.greeting(pack.name, pack.version);
 
-    messages.debug("Loading dependencies...");
-    
+	messages.debug("Loading dependencies...");
+	var xmppWrapper = require("./core/connector/XMPPWrapper");
+	messages.debug("Dependencies loaded.");
+
+	var client = xmppWrapper.createClientFromConf(config, process.env.PASSWORD);
+
+	client.on('online', function() {
+		messages.info("Client chat is online.");
+		client.send(new xmpp.Element('presence', { })
+		  .c('show').t('chat').up()
+		  .c('status').t('Happily echoing your <message/> stanzas')
+		)
+	});
+
+	client.on('stanza', function(stanza) {
+		if (stanza.is('message') &&
+			// Important: never reply to errors!
+			(stanza.attrs.type !== 'error')) {
+			// Swap addresses...
+			stanza.attrs.to = stanza.attrs.from;
+			delete stanza.attrs.from;
+			// and send back
+			messages.info('Sending response: ' + stanza.root().toString());
+			client.send(stanza);
+		}
+	});
+
+	client.on('error', function(e) {
+		messages.error(e);
+	});
 
 }
 

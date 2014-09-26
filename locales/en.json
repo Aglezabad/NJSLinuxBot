@@ -1,4 +1,16 @@
 {
 	"\t Version: ": "\t Version: ",
-	"Loading dependencies...": "Loading dependencies..."
+	"Loading dependencies...": "Loading dependencies...",
+	"Dependencies loaded.": "Dependencies loaded.",
+	"Connecting to undefined:undefined...": "Connecting to undefined:undefined...",
+	"Creating client using [object Object] at undefined:undefined...": "Creating client using [object Object] at undefined:undefined...",
+	"Calling createClientService(jid, password, service) from createClientConfig(config, password)...": "Calling createClientService(jid, password, service) from createClientConfig(config, password)...",
+	"Connecting to hangouts:undefined...": "Connecting to hangouts:undefined...",
+	"Creating client using nodespabot@gmail.com at hangouts:undefined...": "Creating client using nodespabot@gmail.com at hangouts:undefined...",
+	"Calling createClient(jid, password, host, port, reconnect) from createClientService(jid, password, service)...": "Calling createClient(jid, password, host, port, reconnect) from createClientService(jid, password, service)...",
+	"Google Hangouts service.": "Google Hangouts service.",
+	"Connecting to talk.google.com:5222...": "Connecting to talk.google.com:5222...",
+	"Creating client using nodespabot@gmail.com at talk.google.com:5222...": "Creating client using nodespabot@gmail.com at talk.google.com:5222...",
+	"No usable SASL mechanism": "No usable SASL mechanism",
+	"Client chat is online.": "Client chat is online."
 }
