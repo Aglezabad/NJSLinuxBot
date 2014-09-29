@@ -1,17 +1,13 @@
 'use strict';
 
+// Dependencies
 require("colors");
-var i18n = require("i18n");
 
+// Variables
 var logLevel;
 
 function constructor(level, locale){
 	logLevel = level;
-	i18n.configure({
-	    locales:['en', 'es'],
-	    directory: __dirname + '/../../locales',
-	    defaultLocale: locale
-	});
 }
 
 function greeting(appName, appVersion){
@@ -23,48 +19,48 @@ function greeting(appName, appVersion){
 		"| |\\  |/\\__/ /\\__/ / | |_/ / (_) | |_ \n".bold+
 		"\\_| \\_/\\____/\\____/  \\____/ \\___/ \\__|\n".bold);                                      
 	console.log("-----------------------------------------".bold);                                         
-	console.log((appName+ i18n.__("\t Version: ") +appVersion).bold);
+	console.log((appName+ "\t Version: " +appVersion).bold);
 	console.log("=========================================".bold);
 }
 
-function printLog(level, message){
+function log(level, message){
 	//Check log level.
 	var levels = ["critical", "error", "warn", "info", "debug"];
 	//--If logLevel === level -> put message
 	if(levels.indexOf(level) <= levels.indexOf(logLevel)){
 		if(levels.indexOf(level) <= levels.indexOf("error")){
-			console.error((level.toUpperCase() + ": ").red.bold + i18n.__(message));
+			console.error((level.toUpperCase() + ": ").red.bold + message);
 		} else if(level.indexOf(level) === levels.indexOf("warn")){
-			console.warn((level.toUpperCase() + ": ").yellow.bold + i18n.__(message));
+			console.warn((level.toUpperCase() + ": ").yellow.bold + message);
 		} else {
-			console.info((level.toUpperCase() + ": ").bold + i18n.__(message));
+			console.info((level.toUpperCase() + ": ").bold + message);
 		}
 	}
 }
 
 function debug(message){
-	printLog("debug", message);
+	log("debug", message);
 }
 
 function info(message){
-	printLog("info", message);
+	log("info", message);
 }
 
 function warn(message){
-	printLog("warn", message);
+	log("warn", message);
 }
 
 function error(message){
-	printLog("error", message);
+	log("error", message);
 }
 
 function critical(message){
-	printLog("critical", message);
+	log("critical", message);
 }
 
 module.exports = constructor;
 module.exports.greeting = greeting;
-module.exports.printLog = printLog;
+module.exports.log = log;
 module.exports.debug = debug;
 module.exports.info = info;
 module.exports.warn = warn;

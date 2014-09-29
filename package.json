@@ -12,8 +12,9 @@
     "start": "node njsbot.js"
   },
   "dependencies": {
-    "node-xmpp": "latest",
-    "i18n": "latest",
-    "colors": "latest"
+    "node-xmpp-client": "latest",
+    "ltx": "latest",
+    "colors": "latest",
+    "moment": "latest"
   }
 }

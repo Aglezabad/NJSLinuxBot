@@ -2,7 +2,9 @@
 	"locale": "en",
 	"level": "debug",
 	"client":{
-		"id": "nodespabot@gmail.com",
-		"service": "hangouts"
-	}
+		"jid": "nodespabot@gmail.com",
+		"service": "hangouts",
+		"reconnect": true
+	},
+	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }
