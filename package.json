@@ -9,10 +9,12 @@
     "url": "https://github.com/Aglezabad/njsrebot-pfg.git"
   },
   "scripts": {
-    "start": "node njsbot.js"
+    "start": "node --harmony njsbot.js"
   },
   "dependencies": {
     "node-xmpp-client": "latest",
+    "node-xmpp-core": "latest",
+    "node-stringprep": "latest",
     "ltx": "latest",
     "colors": "latest",
     "moment": "latest"

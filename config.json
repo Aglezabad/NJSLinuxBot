@@ -4,7 +4,12 @@
 	"client":{
 		"jid": "nodespabot@gmail.com",
 		"service": "hangouts",
-		"reconnect": true
+		"reconnect": true,
+		"timeout": 0,
+		"keepAlive": {
+			"set": true,
+			"time": 10000
+		}
 	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }

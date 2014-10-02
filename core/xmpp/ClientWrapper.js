@@ -2,9 +2,15 @@
 
 //Dependencies
 var Client = require("node-xmpp-client");
+var JID = require("node-xmpp-core").JID;
 var LTX = require("ltx");
 var Messages = require("../logger/Messages");
 var Services = require("./services.json");
+
+// Constants
+const DEFAULT_SOCKET_TIMEOUT=60000;
+const DEFAULT_KEEPALIVE_SET=true;
+const DEFAULT_KEEPALIVE_TIMEOUT=30000;
 
 // Variables
 var xmppClient;
@@ -33,6 +39,10 @@ function createClient(config, password){
 		Messages.debug("Creating client using "+config.client.jid+" at "+config.client.host+":"+config.client.port+"...");
 		xmppClient = new Client(config.client);
 		Messages.debug("Client created.");
+		Messages.debug("Setting client timeout and keepalive...");
+		xmppClient.connection.socket.setTimeout(config.client.timeout || DEFAULT_SOCKET_TIMEOUT);
+		xmppClient.connection.socket.setKeepAlive(config.client.keepAlive.set || DEFAULT_KEEPALIVE_SET, config.client.keepAlive.time || DEFAULT_KEEPALIVE_TIMEOUT);
+		Messages.debug("Client timeout and keepalive set.");
 		return xmppClient;
 	}
 }
@@ -48,10 +58,16 @@ function getClient(){
 
 function createElement(name, attrs){
 	attrs=attrs||{};
-	Messages.debug("Creating element with name: "+name+" and attributes: "+attrs.toString()+"...");
+	Messages.debug("Creating element with name: "+name+" and attributes: "+attrs.toString()+".");
 	return new LTX.Element(name, attrs);
+}
+
+function createJID(attrs, beta, gamma){
+	Messages.debug("Creating Jabber ID element.");
+	return new JID(attrs, beta, gamma);
 }
 
 module.exports.createClient = createClient;
 module.exports.getClient = getClient;
 module.exports.createElement = createElement;
+module.exports.createJID = createJID;
