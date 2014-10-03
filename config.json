@@ -11,5 +11,8 @@
 			"time": 10000
 		}
 	},
+	"interpreter":{
+		"name": "LinuxBot"
+	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }

@@ -17,6 +17,7 @@
     "node-stringprep": "latest",
     "ltx": "latest",
     "colors": "latest",
-    "moment": "latest"
+    "moment": "latest",
+    "aimlinterpreter": "latest"
   }
 }

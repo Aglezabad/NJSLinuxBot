@@ -3,13 +3,24 @@
 // Dependencies
 var Messages = require("../logger/Messages");
 var ClientWrapper = require("./ClientWrapper");
+var AIMLWrapper = require("../aiml/AIMLWrapper");
 
 // Variables
-var client;
+var client, interpreter;
 
 // Functions
 function constructor(){
 	client = ClientWrapper.getClient();
+	interpreter = AIMLWrapper.getInterpreter();
+}
+
+function online(config){
+	Messages.info("Client chat is online.");
+	setStatusMessage(config.statusMessage);
+	reqGoogleRoster();
+
+	// Check roster every keepAlive
+	setInterval(reqGoogleRoster, config.client.keepAlive.time);
 }
 
 function readStanza(stanza){
@@ -67,12 +78,11 @@ function handlePresence(stanza){
 }
 
 function handleMessage(stanza){
-	// Swap addresses...
-	stanza.attrs.to = stanza.attrs.from;
-	delete stanza.attrs.from;
-	// and send back
-	Messages.info('Sending response: ' + stanza.root().toString());
-	client.send(stanza);
+	if(stanza.getChild("body") !== null && stanza.getChild("body") !== undefined){
+		interpreter.findAnswerInLoadedAIMLFiles(stanza.getChildText("body"), function(answer){
+			sendMessage(stanza.attrs.from, answer);
+		});
+	}
 }
 
 function reqGoogleRoster(){
@@ -86,7 +96,13 @@ function setStatusMessage(statusMessage){
 		.c("status").t(statusMessage));
 }
 
+function sendMessage(toJid, messageBody){
+	var message = ClientWrapper.createElement("message", {to: toJid, type: "chat"})
+		.c("body").t(messageBody);
+	Messages.debug('Sending response: ' + message.toString());
+	client.send(message);
+}
+
 module.exports = constructor;
 module.exports.readStanza = readStanza;
-module.exports.reqGoogleRoster = reqGoogleRoster;
-module.exports.setStatusMessage = setStatusMessage;
+module.exports.online = online;
