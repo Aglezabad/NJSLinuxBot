@@ -5,10 +5,10 @@ require("colors");
 
 var Messages = (function() {
    var singleInstance;
-   return function(level) {
+   return function(logLevel) {
         if ( singleInstance ) return singleInstance; 
         singleInstance = this;
-        var level = level; // private
+        var level = logLevel; // private
         // public methods
         this.greeting = function(appName, appVersion){
 			console.log("=========================================".bold);
@@ -22,17 +22,17 @@ var Messages = (function() {
 			console.log((appName+ "\t Version: " +appVersion).bold);
 			console.log("=========================================".bold);
 		};
-		this.log = function(level, message){
+		this.log = function(logLevel, message){
 			//Check log level.
 			var levels = ["critical", "error", "warn", "info", "debug"];
 			//--If logLevel === level -> put message
-			if(levels.indexOf(level) <= levels.indexOf(this.level)){
-				if(levels.indexOf(level) <= levels.indexOf("error")){
-					console.error((level.toUpperCase() + ": ").red.bold + message);
+			if(levels.indexOf(logLevel) <= levels.indexOf(level)){
+				if(levels.indexOf(logLevel) <= levels.indexOf("error")){
+					console.error((logLevel.toUpperCase() + ": ").red.bold + message);
 				} else if(level.indexOf(level) === levels.indexOf("warn")){
-					console.warn((level.toUpperCase() + ": ").yellow.bold + message);
+					console.warn((logLevel.toUpperCase() + ": ").yellow.bold + message);
 				} else {
-					console.info((level.toUpperCase() + ": ").bold + message);
+					console.info((logLevel.toUpperCase() + ": ").bold + message);
 				}
 			}
 		};

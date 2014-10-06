@@ -2,7 +2,7 @@
 
 // Dependencies
 var Messages = require("../logger/Messages");
-var ClientWrapper = require("./ClientWrapper");
+var clientWrapper = new require("./ClientWrapper")();
 var AIMLWrapper = require("../aiml/AIMLWrapper");
 
 // Variables
@@ -10,7 +10,7 @@ var client, interpreter;
 
 // Functions
 function constructor(){
-	client = ClientWrapper.getClient();
+	client = clientWrapper.getClient();
 	interpreter = AIMLWrapper.getInterpreter();
 }
 

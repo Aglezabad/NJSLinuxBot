@@ -1,15 +1,15 @@
 var AIMLInterpreter = require("aimlinterpreter");
-var Messages = require("../logger/Messages");
+var messages = new require("../logger/Messages")();
 
 var interpreter;
 
 function createInterpreter(config){
 	if(interpreter !== null && interpreter !== undefined){
-		Messages.warn("Interpreter already created. Use getInterpreter(). Skipping.");
+		messages.warn("Interpreter already created. Use getInterpreter(). Skipping.");
 	} else {
-		Messages.debug("Creating AIMLInterpreter...");
+		messages.debug("Creating AIMLInterpreter...");
 		interpreter = new AIMLInterpreter(config.interpreter);
-		Messages.debug("Interpreter created.");
+		messages.debug("Interpreter created.");
 		return interpreter;
 	}
 }
@@ -18,7 +18,7 @@ function getInterpreter(){
 	if(interpreter !== null && interpreter !== undefined){
 		return interpreter;
 	} else {
-		Messages.critical("No interpreter created before. Use createInterpreter() first.");
+		messages.critical("No interpreter created before. Use createInterpreter() first.");
 		throw "NoInterpreterCreatedException";
 	}
 }
