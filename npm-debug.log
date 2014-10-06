@@ -20,7 +20,7 @@
 11 error There is likely additional logging output above.
 12 error System Linux 3.2.0-4-amd64
 13 error command "node" "/usr/bin/npm" "start"
-14 error cwd /home/vm3d/Documentos/njsrebot-pfg
+14 error cwd /home/vm3d/Documentos/NJSLinuxBot
 15 error node -v v0.10.29
 16 error npm -v 1.4.27
 17 error code ELIFECYCLE

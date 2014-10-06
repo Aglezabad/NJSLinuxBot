@@ -9,16 +9,16 @@ var pack = require("./package.json");
 
 // Functions
 function startBot(){
-	Messages(process.env.LEVEL || config.level, process.env.LOCALE || config.locale);
-	Messages.greeting(pack.name, pack.version);
+	var messages = new Messages(process.env.LEVEL || config.level);
+	messages.greeting(pack.name, pack.version);
 
-	Messages.debug("Loading dependencies...");
+	messages.debug("Loading dependencies...");
 	var ClientWrapper = require("./core/xmpp/ClientWrapper");
 	var AIMLWrapper = require("./core/aiml/AIMLWrapper");
 	var IoWrapper = require("./core/xmpp/IoWrapper");
-	Messages.debug("Dependencies loaded.");
+	messages.debug("Dependencies loaded.");
 
-	var client = ClientWrapper.createClient(config, process.env.PASSWORD);
+	var client = new ClientWrapper(config, process.env.PASSWORD).getClient();
 	var interpreter = AIMLWrapper.createInterpreter(config);
 	IoWrapper();
 
@@ -31,7 +31,7 @@ function startBot(){
 	client.on('stanza', IoWrapper.readStanza);
 
 	client.on('error', function(e) {
-		Messages.error(e);
+		messages.error(e);
 	});
 
 }
