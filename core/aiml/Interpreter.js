@@ -10,6 +10,11 @@ var Interpreter = (function() {
 		messages.debug("Creating AIMLInterpreter...");
 		var interpreter = new AIMLInterpreter(config.interpreter);
 		messages.debug("Interpreter created.");
+		/**
+		 * Obtiene el intéprete.
+		 * @method getInterpreter
+		 * @return interpreter
+		 */
 		this.getInterpreter = function(){
 			return interpreter;
 		};

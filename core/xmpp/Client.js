@@ -39,14 +39,32 @@ var ClientWrapper = (function() {
 		messages.debug("Creating client using "+config.client.jid+" at "+config.client.host+":"+config.client.port+"...");
 		var client = new Client(config.client);
 		messages.debug("Client created.");		
+        /**
+         * Obtiene el cliente XMPP.
+         * @method getClient
+         * @return client
+         */
         this.getClient = function(){
         	return client;
         };
+        /**
+         * Asigna el tiempo máximo de espera de la conexión antes de cerrarse con error.
+         * @method setTimeout
+         * @param {} timeout
+         * @return void
+         */
         this.setTimeout = function(timeout){
         	messages.debug("Setting client timeout...");
         	client.connection.socket.setTimeout(timeout || DEFAULT_SOCKET_TIMEOUT);
         	messages.debug("Client timeout set.");
         };
+        /**
+         * Asigna el periodo de tiempo entre pulsos de vida de la conexión.
+         * @method setKeepAlive
+         * @param {} enable
+         * @param {} time
+         * @return void
+         */
         this.setKeepAlive = function(enable, time){
         	messages.debug("Setting client keepalive...");
         	client.connection.socket.setKeepAlive(enable || DEFAULT_KEEPALIVE_SET, time || DEFAULT_KEEPALIVE_TIMEOUT);

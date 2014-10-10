@@ -1,6 +1,6 @@
 {
   "name": "NJSBot-PFG",
-  "description": "AI bot made for Final Degree Project of Ángel González based on Hollywell Google Talk Bot",
+  "description": "AI bot made for Final Degree Project of Ángel González based on Hollywell's Google Talk Bot, Hubot GTalk adapter and ALICE.",
   "version": "0.0.0",
   "license": "GPLv3",
   "private": true,

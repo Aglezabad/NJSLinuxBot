@@ -17,6 +17,12 @@ var ClientIO = (function() {
 		var client = new Client().getClient(),
 		interpreter = new Interpreter().getInterpreter();
 		// private methods
+		/**
+		 * Procesa los mensajes presencia de XMPP.
+		 * @method handlePresence
+		 * @param {} stanza
+		 * @return void
+		 */
 		var handlePresence = function(stanza){
 			var jid = JID(stanza.attrs.from);
 
@@ -52,6 +58,12 @@ var ClientIO = (function() {
 			}
 		};
 
+		/**
+		 * Procesa los mensajes estándar de XMPP.
+		 * @method handleMessage
+		 * @param {} stanza
+		 * @return void
+		 */
 		var handleMessage = function(stanza){
 			if(stanza.getChild("body") !== null && stanza.getChild("body") !== undefined){
 				interpreter.findAnswerInLoadedAIMLFiles(stanza.getChildText("body"), function(answer){
@@ -60,18 +72,35 @@ var ClientIO = (function() {
 			}
 		};
 
+		/**
+		 * Envía una petición de tipo Google roster para mostrar la lista de clientes que solicitan conversación con el bot.
+		 * @method reqGoogleRoster
+		 * @return void
+		 */
 		var reqGoogleRoster = function(){
 			client.send(Element("iq", { from: client.jid, type: "get", id: "google-roster"})
 				.c("query", {xmlns: "jabber:iq:roster", "xmlns:gr": "google:roster", "gr:ext": "2" }));
 		};
 
 		// public methods
+		/**
+		 * Asigna un mensaje de estado al bot, que será mostrado en el chat.
+		 * @method setStatusMessage
+		 * @param {} statusMessage
+		 * @return void
+		 */
 		this.setStatusMessage = function(statusMessage){
 			client.send(Element("presence", { })
 				.c("show").t("chat").up()
 				.c("status").t(statusMessage));
 		};
 
+		/**
+		 * Realiza las tareas pertinentes tras recibir el estado "conectado".
+		 * @method online
+		 * @param {} config
+		 * @return void
+		 */
 		this.online = function(config){
 			messages.info("Client chat is online.");
 			this.setStatusMessage(config.statusMessage);
@@ -81,6 +110,12 @@ var ClientIO = (function() {
 			setInterval(reqGoogleRoster, config.client.keepAlive.time);
 		};
 		
+		/**
+		 * Clasifica los mensajes recibidos según tipo.
+		 * @method readStanza
+		 * @param {} stanza
+		 * @return void
+		 */
 		this.readStanza = function(stanza){
 			messages.debug("Stanza: "+stanza.toString());
 
@@ -98,6 +133,13 @@ var ClientIO = (function() {
 			}
 		};
 
+		/**
+		 * Realiza el envío de strings como mensajes XMPP a un usuario concreto.
+		 * @method sendMessage
+		 * @param {} toJid
+		 * @param {} messageBody
+		 * @return void
+		 */
 		this.sendMessage = function(toJid, messageBody){
 			var message = Element("message", {to: toJid, type: "chat"})
 				.c("body").t(messageBody);

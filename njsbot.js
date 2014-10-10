@@ -7,6 +7,11 @@ config = require("./config.json"),
 pack = require("./package.json");
 
 // Functions
+/**
+ * Función principal que inicia el bot.
+ * @method startBot
+ * @return void
+ */
 function startBot(){
 	var messages = new Messages(process.env.LEVEL || config.level);
 	messages.greeting(pack.name, pack.version);
