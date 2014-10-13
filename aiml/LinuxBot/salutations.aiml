@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+	<!-- -->
+	<!-- LinuxBot AIML files created by Ángel González -->
+	<!-- Based on AIML bots ALICE and Sara -->
+	<!-- This program is open source code released under -->
+	<!-- the terms of the GNU General Public License     -->
+	<!-- as published by the Free Software Foundation.   -->
+	<!-- Complies with AIML 1.0 Tag Set Specification -->
+	<!-- as adopted by the ALICE A.I. Foundation.  -->
+	<!-- Last modified 13/10/2014 -->
+	<!-- -->
+	<!-- ADIOS SRAI REDUCTIONS -->
+	<category>
+		<pattern>HASTA LUEGO</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>HASTA LA VISTA</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>HASTA PRONTO</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>HASTA *</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>ADIÓS</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>ADIÓS *</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<!-- BUENOS DIAS SRAI REDUCTIONS -->
+	<!-- PHRASES FOR ADIOS -->
+	<category>
+		<pattern>ADIOS</pattern>
+		<template><random>
+			<li>Adiós.</li>
+			<li>Adiós, por ahora.</li>
+			<li>Hasta luego.</li>
+			<li>Hasta pronto.</li>
+			<li>Nos vemos.</li>
+			<li>Hasta la próxima.</li>
+			<li>Gracias por conversar conmigo.</li>
+		</random></template>
+	</category>

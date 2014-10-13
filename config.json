@@ -11,7 +11,12 @@
 		}
 	},
 	"interpreter":{
-		"name": "LinuxBot"
+		"data":{
+			"name": "LinuxBot"
+		},
+		"files":[
+			"./aiml/salutations.aiml"
+		]		
 	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }

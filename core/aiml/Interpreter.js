@@ -17,7 +17,7 @@ var Interpreter = (function() {
 		if ( singleInstance ) return singleInstance; 
 		singleInstance = this;
 		messages.debug("Creating AIMLInterpreter...");
-		var interpreter = new AIMLInterpreter(config.interpreter);
+		var interpreter = new AIMLInterpreter(config.interpreter.data);
 		messages.debug("Interpreter created.");
 		/**
 		 * Obtiene el intéprete.

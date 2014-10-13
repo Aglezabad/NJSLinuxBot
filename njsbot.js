@@ -27,7 +27,7 @@ function startBot(){
 	interpreter = new Interpreter(config).getInterpreter(),
 	clientio = new ClientIO();
 
-	interpreter.loadAIMLFilesIntoArray(['./aiml/greetings.aiml.xml']);
+	interpreter.loadAIMLFilesIntoArray(config.interpreter.files);
 
 	client.on('online', function(){
 		clientio.online(config);
