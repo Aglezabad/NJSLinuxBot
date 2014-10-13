@@ -1,8 +1,15 @@
 'use strict';
 
+/** @module core/logger/Messages */
+
 // Dependencies
 require("colors");
 
+/**
+* Constructor de la clase de envío de mensajes.
+* @constructor
+* @param {string} logLevel
+*/
 var Messages = (function() {
    var singleInstance;
    return function(logLevel) {
@@ -12,9 +19,10 @@ var Messages = (function() {
         // public methods
         /**
          * Envía por salida el saludo de la aplicación.
+         * @access public
          * @method greeting
-         * @param {} appName
-         * @param {} appVersion
+         * @param {string} appName
+         * @param {string} appVersion
          * @return void
          */
         this.greeting = function(appName, appVersion){
@@ -31,9 +39,10 @@ var Messages = (function() {
 		};
 		/**
 		 * Envía por salida un mensaje en un nivel concreto.
+		 * @access public
 		 * @method log
-		 * @param {} logLevel
-		 * @param {} message
+		 * @param {string} logLevel
+		 * @param {string} message
 		 * @return void
 		 */
 		this.log = function(logLevel, message){
@@ -52,8 +61,9 @@ var Messages = (function() {
 		};
 		/**
 		 * Envía un mensaje a la salida como depuración.
+		 * @access public
 		 * @method debug
-		 * @param {} message
+		 * @param {string} message
 		 * @return void
 		 */
 		this.debug = function(message){
@@ -61,8 +71,9 @@ var Messages = (function() {
 		};
 		/**
 		 * Envía un mensaje a la salida como información.
+		 * @access public
 		 * @method info
-		 * @param {} message
+		 * @param {string} message
 		 * @return void
 		 */
 		this.info = function(message){
@@ -70,8 +81,9 @@ var Messages = (function() {
 		};
 		/**
 		 * Envía un mensaje a la salida como advertencia.
+		 * @access public
 		 * @method warn
-		 * @param {} message
+		 * @param {string} message
 		 * @return void
 		 */
 		this.warn = function(message){
@@ -79,8 +91,9 @@ var Messages = (function() {
 		};
 		/**
 		 * Envía un mensaje a la salida de errores como error.
+		 * @access public
 		 * @method error
-		 * @param {} message
+		 * @param {string} message
 		 * @return void
 		 */
 		this.error = function(message){
@@ -88,8 +101,9 @@ var Messages = (function() {
 		};
 		/**
 		 * Envía un mensaje a la salida de errores como fallo crítico.
+		 * @access public
 		 * @method critical
-		 * @param {} message
+		 * @param {string} message
 		 * @return void
 		 */
 		this.critical = function(message){

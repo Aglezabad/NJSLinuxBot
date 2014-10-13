@@ -1,5 +1,7 @@
 'use strict';
 
+/** @module core/xmpp/Client */
+
 //Dependencies
 var Client = require("node-xmpp-client");
 var Messages = require("../logger/Messages");
@@ -7,6 +9,12 @@ var Services = require("./services.json");
 
 // Constants
 
+/**
+* Constructor de la clase ClientWrapper, envoltura de la clase Client de Node-XMPP.
+* @constructor
+* @param {object} config
+* @param {string} password
+*/
 var ClientWrapper = (function() {
    var singleInstance,
    messages = new Messages();
@@ -41,6 +49,7 @@ var ClientWrapper = (function() {
 		messages.debug("Client created.");		
         /**
          * Obtiene el cliente XMPP.
+         * @access public
          * @method getClient
          * @return client
          */
@@ -49,8 +58,9 @@ var ClientWrapper = (function() {
         };
         /**
          * Asigna el tiempo máximo de espera de la conexión antes de cerrarse con error.
+         * @access public
          * @method setTimeout
-         * @param {} timeout
+         * @param {int} timeout
          * @return void
          */
         this.setTimeout = function(timeout){
@@ -60,9 +70,10 @@ var ClientWrapper = (function() {
         };
         /**
          * Asigna el periodo de tiempo entre pulsos de vida de la conexión.
+         * @access public
          * @method setKeepAlive
-         * @param {} enable
-         * @param {} time
+         * @param {boolean} enable
+         * @param {int} time
          * @return void
          */
         this.setKeepAlive = function(enable, time){

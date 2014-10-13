@@ -1,5 +1,7 @@
 'use strict';
 
+/** @module core/xmpp/ClientIO */
+
 // Dependencies
 var Messages = require("../logger/Messages");
 var Client = require("./Client");
@@ -19,6 +21,7 @@ var ClientIO = (function() {
 		// private methods
 		/**
 		 * Procesa los mensajes presencia de XMPP.
+		 * @access private
 		 * @method handlePresence
 		 * @param {} stanza
 		 * @return void
@@ -60,6 +63,7 @@ var ClientIO = (function() {
 
 		/**
 		 * Procesa los mensajes estándar de XMPP.
+		 * @access private
 		 * @method handleMessage
 		 * @param {} stanza
 		 * @return void
@@ -74,6 +78,7 @@ var ClientIO = (function() {
 
 		/**
 		 * Envía una petición de tipo Google roster para mostrar la lista de clientes que solicitan conversación con el bot.
+		 * @access private
 		 * @method reqGoogleRoster
 		 * @return void
 		 */
@@ -85,6 +90,7 @@ var ClientIO = (function() {
 		// public methods
 		/**
 		 * Asigna un mensaje de estado al bot, que será mostrado en el chat.
+		 * @access public
 		 * @method setStatusMessage
 		 * @param {} statusMessage
 		 * @return void
@@ -97,6 +103,7 @@ var ClientIO = (function() {
 
 		/**
 		 * Realiza las tareas pertinentes tras recibir el estado "conectado".
+		 * @access public
 		 * @method online
 		 * @param {} config
 		 * @return void
@@ -112,6 +119,7 @@ var ClientIO = (function() {
 		
 		/**
 		 * Clasifica los mensajes recibidos según tipo.
+		 * @access public
 		 * @method readStanza
 		 * @param {} stanza
 		 * @return void
@@ -135,6 +143,7 @@ var ClientIO = (function() {
 
 		/**
 		 * Realiza el envío de strings como mensajes XMPP a un usuario concreto.
+		 * @access public
 		 * @method sendMessage
 		 * @param {} toJid
 		 * @param {} messageBody

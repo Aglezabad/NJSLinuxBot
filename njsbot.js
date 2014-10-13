@@ -9,6 +9,7 @@ pack = require("./package.json");
 // Functions
 /**
  * Función principal que inicia el bot.
+ * @access public
  * @method startBot
  * @return void
  */

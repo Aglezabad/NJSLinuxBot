@@ -1,5 +1,7 @@
 "use strict";
 
+/** @module core/xmpp/JID */
+
 var Messages = require("../logger/Messages");
 var JID = require("node-xmpp-core").JID;
 
@@ -7,7 +9,7 @@ var messages = new Messages();
 
 /**
  * Factoría de objetos JID que guardan los datos de identificación de un usuario.
- * @method JIDElement
+ * @constructor
  * @param {} attrs
  * @param {} beta
  * @param {} gamma

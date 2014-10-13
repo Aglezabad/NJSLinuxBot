@@ -1,6 +1,15 @@
+
+/** @module core/aiml/Interpreter */
+
+// Dependencies
 var AIMLInterpreter = require("aimlinterpreter");
 var Messages = require("../logger/Messages");
 
+/**
+* Constructor de la capa intéprete de AIML.
+* @constructor
+* @param {object} config
+*/
 var Interpreter = (function() {
 	var singleInstance,
 	messages = new Messages();
@@ -12,6 +21,7 @@ var Interpreter = (function() {
 		messages.debug("Interpreter created.");
 		/**
 		 * Obtiene el intéprete.
+		 * @access public
 		 * @method getInterpreter
 		 * @return interpreter
 		 */
