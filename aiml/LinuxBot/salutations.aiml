@@ -35,7 +35,50 @@
 		<pattern>ADIÓS *</pattern>
 		<template><srai>adios</srai></template>
 	</category>
+	<category>
+		<pattern>QUE TENGAS BUENA NOCHE</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>ME TENGO QUE IR</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>TENGO QUE IRME</pattern>
+		<template><srai>adios</srai></template>
+	</category>
+	<category>
+		<pattern>NO ME APETECE HABLAR</pattern>
+		<template><srai>adios</srai></template>
+	</category>
 	<!-- BUENOS DIAS SRAI REDUCTIONS -->
+	<category>
+		<pattern>BUENOS DÍAS</pattern>
+		<template><srai>buenos dias</srai></template>
+	</category>
+	<category>
+		<pattern>BUENOS DÍAS *</pattern>
+		<template><srai>buenos dias</srai></template>
+	</category>
+	<!-- BUENAS TARDES SRAI REDUCTIONS -->
+	<category>
+		<pattern>BUENAS TARDES *</pattern>
+		<template><srai>buenas tardes</srai></template>
+	</category>
+	<!-- BUENAS NOCHES SRAI REDUCTIONS -->
+	<category>
+		<pattern>BUENAS NOCHES *</pattern>
+		<template><srai>buenas noches</srai></template>
+	</category>
+	<!-- HOLA SRAI REDUCTIONS -->
+	<category>
+		<pattern>BUENAS</pattern>
+		<template><srai>hola</srai></template>
+	</category>
+	<category>
+		<pattern>* BUENAS</pattern>
+		<template><srai>hola</srai></template>
+	</category>
 	<!-- PHRASES FOR ADIOS -->
 	<category>
 		<pattern>ADIOS</pattern>
@@ -49,3 +92,35 @@
 			<li>Gracias por conversar conmigo.</li>
 		</random></template>
 	</category>
+	<!-- PHRASES FOR BUENOS DIAS -->
+	<category>
+		<pattern>BUENOS DIAS</pattern>
+		<template><random>
+			<li>Buenos días.</li>
+			<li>Buenos días. ¿En qué puedo ayudarte?</li>
+		</random></template>
+	</category>
+	<!-- PHRASES FOR BUENAS TARDES -->
+	<category>
+		<pattern>BUENAS TARDES</pattern>
+		<template><random>
+			<li>Buenas tardes.</li>
+			<li>Buenas tardes. ¿En qué puedo ayudarte?</li>
+		</random></template>
+	</category>
+	<!-- PHRASES FOR BUENAS NOCHES -->
+	<category>
+		<pattern>BUENAS NOCHES</pattern>
+		<template><random>
+			<li>Buenas noches.</li>
+			<li>Buenas noches. ¿En qué puedo ayudarte?</li>
+		</random></template>
+	</category>
+	<!-- PHRASES FOR HOLA -->
+	<category>
+		<pattern>HOLA</pattern>
+		<template><random>
+			<li>Hola.</li>
+		</random></template>
+	</category>
+</aiml>

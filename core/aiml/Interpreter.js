@@ -2,7 +2,7 @@
 /** @module core/aiml/Interpreter */
 
 // Dependencies
-var AIMLInterpreter = require("aimlinterpreter");
+var AIML = require("aiml");
 var Messages = require("../logger/Messages");
 
 /**
@@ -16,9 +16,16 @@ var Interpreter = (function() {
 	return function(config) {
 		if ( singleInstance ) return singleInstance; 
 		singleInstance = this;
-		messages.debug("Creating AIMLInterpreter...");
-		var interpreter = new AIMLInterpreter(config.interpreter.data);
-		messages.debug("Interpreter created.");
+		var setTopicsOutsideCallback = function(topics){
+			aimlTopics = topics;
+		}
+		AIML.parseDir(config.interpreter.directory, function(err, topics){
+			setTopicsOutsideCallback(topics);
+		});
+		var aimlTopics
+		messages.debug("Creating AIMLEngine...");
+		var interpreter = new AIML.AiEngine("Default", aimlTopics, config.interpreter.data);
+		messages.debug("Engine created.");
 		/**
 		 * Obtiene el intéprete.
 		 * @access public

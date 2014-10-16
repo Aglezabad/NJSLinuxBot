@@ -14,9 +14,7 @@
 		"data":{
 			"name": "LinuxBot"
 		},
-		"files":[
-			"./aiml/salutations.aiml"
-		]		
+		"directory": "./aiml/LinuxBot/"	
 	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }

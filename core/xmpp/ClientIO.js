@@ -69,10 +69,12 @@ var ClientIO = (function() {
 		 * @return void
 		 */
 		var handleMessage = function(stanza){
+			var jid = JID(stanza.attrs.from);
+
 			if(stanza.getChild("body") !== null && stanza.getChild("body") !== undefined){
 				messages.debug("Child: "+stanza.getChild("body")+" | ChildText: "+stanza.getChildText("body"));
-				interpreter.findAnswerInLoadedAIMLFiles(stanza.getChildText("body"), function(answer, wildCardArray){
-					messages.debug("Answer: "+answer+" | WCArray: "+wildCardArray.toString());
+				interpreter.reply({name: jid.getLocal()}, stanza.getChildText("body"), function(err, answer){
+					messages.debug("Error: "+err+" | Answer: "+answer);
 					singleInstance.sendMessage(stanza.attrs.from, answer);
 				});
 			}
