@@ -16,16 +16,13 @@ var Interpreter = (function() {
 	return function(config) {
 		if ( singleInstance ) return singleInstance; 
 		singleInstance = this;
-		var setTopicsOutsideCallback = function(topics){
-			aimlTopics = topics;
-		}
-		AIML.parseDir(config.interpreter.directory, function(err, topics){
-			setTopicsOutsideCallback(topics);
+		// NOT WORKING - Función asíncrona en código de planteamiento síncrono.
+		AIML.parseDir(config.interpreter.directory, function(topics){
+			messages.debug("Creating AIMLEngine...");
+			var interpreter = new AIML.AiEngine("Default", topics, config.interpreter.data);
+			messages.debug("Engine created.");
 		});
-		var aimlTopics
-		messages.debug("Creating AIMLEngine...");
-		var interpreter = new AIML.AiEngine("Default", aimlTopics, config.interpreter.data);
-		messages.debug("Engine created.");
+		
 		/**
 		 * Obtiene el intéprete.
 		 * @access public
