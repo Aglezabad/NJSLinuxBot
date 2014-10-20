@@ -4,6 +4,7 @@
 // Dependencies
 var AIMLInterpreter = require("aimlinterpreter");
 var Messages = require("../logger/Messages");
+var os = require("os");
 
 /**
 * Constructor de la capa intéprete de AIML.
@@ -16,6 +17,8 @@ var Interpreter = (function() {
 	return function(config) {
 		if ( singleInstance ) return singleInstance; 
 		singleInstance = this;
+		config.interpreter.data.language = "Javascript";
+		config.interpreter.data.os = os.platform();
 		messages.debug("Creating AIMLInterpreter...");
 		var interpreter = new AIMLInterpreter(config.interpreter.data);
 		messages.debug("Interpreter created.");
