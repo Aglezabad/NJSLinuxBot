@@ -21,6 +21,7 @@
 		"files":[
 			"./aiml/LinuxBot/ai.aiml",
 			"./aiml/LinuxBot/bot_profile.aiml",
+			"./aiml/LinuxBot/default.aiml",
 			"./aiml/LinuxBot/salutations.aiml"
 		]		
 	},

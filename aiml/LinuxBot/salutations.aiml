@@ -54,7 +54,7 @@
 		<pattern>BUENOS DÍAS</pattern>
 		<template><srai>BUENOS DIAS</srai></template>
 	</category>
-	<category>
+	<!--<category>
 		<pattern>BUENOS DÍAS *</pattern>
 		<template><srai>BUENOS DIAS</srai></template>
 	</category>
@@ -65,7 +65,7 @@
 	<category>
 		<pattern>BUENAS NOCHES *</pattern>
 		<template><srai>BUENAS NOCHES</srai></template>
-	</category>
+	</category>-->
 	<category>
 		<pattern>BUENAS</pattern>
 		<template><srai>HOLA</srai></template>

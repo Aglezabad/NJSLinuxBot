@@ -36,7 +36,7 @@ var ClientIO = (function() {
 			switch(stanza.attrs.type){
 				case "subscribe":
 					messages.info(jid.getLocal()+" suscribed to us.");
-					client.send(Element("presence", {
+					singleInstance.sendElement(Element("presence", {
 						from: client.jid.toString(),
 						to: stanza.attrs.from,
 						id: stanza.attrs.id,
@@ -45,7 +45,7 @@ var ClientIO = (function() {
 					break;
 				case "probe":
 					messages.debug("Probe received. Sending probe...");
-					client.send(Element("presence",{
+					singleInstance.sendElement(Element("presence",{
 						from: client.jid.toString(),
 						to: stanza.attrs.from,
 						id: stanza.attrs.id
@@ -54,7 +54,7 @@ var ClientIO = (function() {
 					break;
 				case "chat":
 					messages.debug("Chat presence received. Sending response...");
-					client.send(Element("presence",{
+					singleInstance.sendElement(Element("presence",{
 						to: stanza.attrs.from+"/"+stanza.attrs.to
 					}));
 					messages.debug("Response sent.");
@@ -69,11 +69,17 @@ var ClientIO = (function() {
 		 * @return void
 		 */
 		var handleMessage = function(stanza){
-			if(stanza.getChild("body") !== null && stanza.getChild("body") !== undefined){
-				messages.debug("Child: "+stanza.getChild("body")+" | ChildText: "+stanza.getChildText("body"));
+			if(stanza.getChildText("body") !== null){
+				// Envío evento de composición de mensaje.
+				singleInstance.sendElement(Element("message", {to: stanza.attrs.from, type: "chat"})
+					.c("cha:composing", {"xmlns:cha": "http://jabber.org/protocol/chatstates"}));
+				// Pasar mensaje a intérprete.
 				interpreter.findAnswerInLoadedAIMLFiles(stanza.getChildText("body"), function(answer, wildCardArray){
 					messages.debug("Answer: "+answer+" | WCArray: "+wildCardArray.toString());
 					singleInstance.sendMessage(stanza.attrs.from, answer);
+					// Envío evento de pausa.
+					singleInstance.sendElement(Element("message", {to: stanza.attrs.from, type: "chat"})
+						.c("cha:paused", {"xmlns:cha": "http://jabber.org/protocol/chatstates"}));
 				});
 			}
 		};
@@ -85,7 +91,7 @@ var ClientIO = (function() {
 		 * @return void
 		 */
 		var reqGoogleRoster = function(){
-			client.send(Element("iq", { from: client.jid, type: "get", id: "google-roster"})
+			singleInstance.sendElement(Element("iq", { from: client.jid, type: "get", id: "google-roster"})
 				.c("query", {xmlns: "jabber:iq:roster", "xmlns:gr": "google:roster", "gr:ext": "2" }));
 		};
 
@@ -98,7 +104,7 @@ var ClientIO = (function() {
 		 * @return void
 		 */
 		this.setStatusMessage = function(statusMessage){
-			client.send(Element("presence", { })
+			this.sendElement(Element("presence", { })
 				.c("show").t("chat").up()
 				.c("status").t(statusMessage));
 		};
@@ -147,15 +153,29 @@ var ClientIO = (function() {
 		 * Realiza el envío de strings como mensajes XMPP a un usuario concreto.
 		 * @access public
 		 * @method sendMessage
-		 * @param {} toJid
-		 * @param {} messageBody
+		 * @param {string} toJid
+		 * @param {string} messageBody
 		 * @return void
 		 */
 		this.sendMessage = function(toJid, messageBody){
+			// Envío mensaje.
 			var message = Element("message", {to: toJid, type: "chat"})
-				.c("body").t(messageBody);
-			messages.debug('Sending response: ' + message.toString());
+				.c("body").t(messageBody).up()
+				.c("cha:active", {"xmlns:cha": "http://jabber.org/protocol/chatstates"});
+			messages.debug("Sending response: " + message.toString());
 			client.send(message);
+		}
+
+		/**
+		 * Realiza el envío de elementos XML ya construidos.
+		 * @access public
+		 * @method sendElement
+		 * @param {Element} element
+		 * @return void
+		 */
+		this.sendElement = function(element){
+			messages.debug("Sending response: " + element.toString());
+			client.send(element);
 		}
 	}  
 })(); 
