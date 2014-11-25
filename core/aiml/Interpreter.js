@@ -4,6 +4,7 @@
 // Dependencies
 var AIML = require("aiml");
 var Messages = require("../logger/Messages");
+var os = require("os");
 
 /**
 * Constructor de la capa intéprete de AIML.
@@ -16,12 +17,11 @@ var Interpreter = (function() {
 	return function(config) {
 		if ( singleInstance ) return singleInstance; 
 		singleInstance = this;
-		// NOT WORKING - Función asíncrona en código de planteamiento síncrono.
-		AIML.parseDir(config.interpreter.directory, function(topics){
-			messages.debug("Creating AIMLEngine...");
-			var interpreter = new AIML.AiEngine("Default", topics, config.interpreter.data);
-			messages.debug("Engine created.");
-		});
+		config.interpreter.data.language = "Javascript";
+		config.interpreter.data.os = os.platform();
+		messages.debug("Creating AIMLInterpreter...");
+		var interpreter = new AIMLInterpreter(config.interpreter.data);
+		messages.debug("Interpreter created.");
 		
 		/**
 		 * Obtiene el intéprete.

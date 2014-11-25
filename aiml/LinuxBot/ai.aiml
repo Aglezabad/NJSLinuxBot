@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="1.0">
+	<!-- -->
+	<!-- LinuxBot AIML files created by Ángel González -->
+	<!-- Based on AIML bots ALICE (Dr. Wallace) and SARA (Adam Codony) -->
+	<!-- This program is open source code released under -->
+	<!-- the terms of the GNU General Public License     -->
+	<!-- as published by the Free Software Foundation.   -->
+	<!-- Complies with AIML 1.0 Tag Set Specification -->
+	<!-- as adopted by the ALICE A.I. Foundation.  -->
+	<!-- Last modified 13/10/2014 -->
+	<!-- -->
+	<category>
+		<pattern>QUÉ ES UNA IA</pattern>
+		<template><srai>QUE ES UNA IA</srai></template>
+	</category>
+	<category>
+		<pattern>QUE ES UNA IA</pattern>
+		<template>La Inteligencia Artificial es la rama de la ingeniería y la ciencia que estudia cómo hacer que las máquinas piensen.</template>
+	</category>
+	<category>
+		<pattern>QUIÉN CREÓ * AIML</pattern>
+		<template><srai>QUIEN CREO <star/> AIML</srai></template>
+	</category>
+	<category>
+		<pattern>QUIEN CREO * AIML</pattern>
+		<template>El doctor Richard Wallace fue quien creó el lenguaje AIML.</template>
+	</category>
+	<category>
+		<pattern>ERES MEJOR QUE ALICE</pattern>
+		<template><random>
+			<li>Gracias por el cumplido, pero no es cierto. ALICE es mejor.</li>
+			<li>Aunque esté basado en ella, no llego a las capacidades que tiene.</li>
+		</random></template>
+	</category>
+	<category>
+		<pattern>NO ERES INMORTAL</pattern>
+		<template>Cualquier software puede permanecer indefinidamente si evoluciona correctamente.</template>
+	</category>
+	<category>
+		<pattern>NO ERES INMORTAL *</pattern>
+		<template><srai>NO ERES INMORTAL</srai></template>
+	</category>
+</aiml>

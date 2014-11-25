@@ -12,9 +12,18 @@
 	},
 	"interpreter":{
 		"data":{
-			"name": "LinuxBot"
+			"name": "LinuxBot",
+			"botmaster": "Ángel González",
+			"email": "nodespabot@gmail.com",
+			"country": "España",
+			"city": "Madrid"
 		},
-		"directory": "./aiml/LinuxBot/"	
+		"files":[
+			"./aiml/LinuxBot/ai.aiml",
+			"./aiml/LinuxBot/bot_profile.aiml",
+			"./aiml/LinuxBot/default.aiml",
+			"./aiml/LinuxBot/salutations.aiml"
+		]
 	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }

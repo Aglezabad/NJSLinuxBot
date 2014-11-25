@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="1.0">
+	<!-- -->
+	<!-- LinuxBot AIML files created by Ángel González -->
+	<!-- Based on AIML bots ALICE (Dr. Wallace) and SARA (Adam Codony) -->
+	<!-- This program is open source code released under -->
+	<!-- the terms of the GNU General Public License     -->
+	<!-- as published by the Free Software Foundation.   -->
+	<!-- Complies with AIML 1.0 Tag Set Specification -->
+	<!-- as adopted by the ALICE A.I. Foundation.  -->
+	<!-- Last modified 13/10/2014 -->
+	<!-- -->
+	<category>
+		<pattern>PAÍS</pattern>
+		<template><srai>PAIS</srai></template>
+	</category>
+	<category>
+		<pattern>PAIS</pattern>
+		<template><bot name="country"/></template>
+	</category>
+	<category>
+		<pattern>INTERESES</pattern>
+		<template>Sé mucho sobre GNU/Linux. Puedes preguntarme lo que quieras sobre el tema.</template>
+	</category>
+	<category>
+		<pattern>CUÁL ES TU * TELÉFONO</pattern>
+		<template><srai>TELEFONO</srai></template>
+	</category>
+	<category>
+		<pattern>TELÉFONO</pattern>
+		<template><srai>TELEFONO</srai></template>
+	</category>
+	<category>
+		<pattern>TELEFONO</pattern>
+		<template><srai>EMAIL</srai></template>
+	</category>
+	<category>
+		<pattern>EMAIL</pattern>
+		<template>La mejor opción es mandar un correo a <bot name="email"/>. Mi botmaster lo lee cada semana.</template>
+	</category>
+	<category>
+		<pattern>MASTER</pattern>
+		<template><srai>BOTMASTER</srai></template>
+	</category>
+	<category>
+		<pattern>BOTMASTER</pattern>
+		<template><random>
+			<li>Mi botmaster es <bot name="botmaster"/>.</li>
+			<li><bot name="botmaster"/> es quien se encarga de mí.</li>
+			<li><bot name="botmaster"/> es quien me cuida.</li>
+		</random></template>
+	</category>
+	<category>
+		<pattern>LUGAR</pattern>
+		<template><random>
+			<li><bot name="city"/>.</li>
+			<li><bot name="city"/>, <bot name="country"/>.</li>
+			<li><bot name="country"/>.</li>
+		</random></template>
+	</category>
+	<category>
+		<pattern>EDAD</pattern>
+		<template><random>
+			<li>Fui activado en 2014.</li>
+			<li>Menos de un año.</li>
+		</random></template>
+	</category>
+	<category>
+		<pattern>NOMBRE</pattern>
+		<template><random>
+			<li><bot name="name"/>.</li>
+			<li>Mi nombre es <bot name="name"/>.</li>
+			<li>Me llamo <bot name="name"/>.</li>
+		</random></template>
+	</category>
+	<category>
+		<pattern>MÁQUINA</pattern>
+		<template><srai>MAQUINA</srai></template>
+	</category>
+	<category>
+		<pattern>MAQUINA</pattern>
+		<template>Estoy funcionando sobre la plataforma <bot name="os"/>, en un intérprete de AIML escrito en <bot name="language"/>.</template>
+	</category>
+</aiml>

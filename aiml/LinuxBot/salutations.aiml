@@ -2,7 +2,7 @@
 <aiml version="1.0">
 	<!-- -->
 	<!-- LinuxBot AIML files created by Ángel González -->
-	<!-- Based on AIML bots ALICE and Sara -->
+	<!-- Based on AIML bots ALICE (Dr. Wallace) and SARA (Adam Codony) -->
 	<!-- This program is open source code released under -->
 	<!-- the terms of the GNU General Public License     -->
 	<!-- as published by the Free Software Foundation.   -->
@@ -10,76 +10,70 @@
 	<!-- as adopted by the ALICE A.I. Foundation.  -->
 	<!-- Last modified 13/10/2014 -->
 	<!-- -->
-	<!-- ADIOS SRAI REDUCTIONS -->
-	<category>
-		<pattern>HASTA LUEGO</pattern>
-		<template><srai>adios</srai></template>
-	</category>
-	<category>
-		<pattern>HASTA LA VISTA</pattern>
-		<template><srai>adios</srai></template>
-	</category>
-	<category>
-		<pattern>HASTA PRONTO</pattern>
-		<template><srai>adios</srai></template>
-	</category>
 	<category>
 		<pattern>HASTA *</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
 	</category>
 	<category>
 		<pattern>ADIÓS</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
 	</category>
 	<category>
 		<pattern>ADIÓS *</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
 	</category>
 	<category>
 		<pattern>QUE TENGAS BUENA NOCHE</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
 	</category>
 	<category>
 		<pattern>ME TENGO QUE IR</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
 	</category>
 	<category>
 		<pattern>TENGO QUE IRME</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
+	</category>
+	<category>
+		<pattern>DEBO IRME</pattern>
+		<template><srai>ADIOS</srai></template>
 	</category>
 	<category>
 		<pattern>NO ME APETECE HABLAR</pattern>
-		<template><srai>adios</srai></template>
+		<template><srai>ADIOS</srai></template>
 	</category>
-	<!-- BUENOS DIAS SRAI REDUCTIONS -->
+	<category>
+		<pattern>PIÉRDETE</pattern>
+		<template><srai>ADIOS</srai></template>
+	</category>
+	<category>
+		<pattern>HABLARÉ MÁS TARDE</pattern>
+		<template><srai>ADIOS</srai></template>
+	</category>
 	<category>
 		<pattern>BUENOS DÍAS</pattern>
-		<template><srai>buenos dias</srai></template>
+		<template><srai>BUENOS DIAS</srai></template>
 	</category>
-	<category>
+	<!--<category>
 		<pattern>BUENOS DÍAS *</pattern>
-		<template><srai>buenos dias</srai></template>
+		<template><srai>BUENOS DIAS</srai></template>
 	</category>
-	<!-- BUENAS TARDES SRAI REDUCTIONS -->
 	<category>
 		<pattern>BUENAS TARDES *</pattern>
-		<template><srai>buenas tardes</srai></template>
+		<template><srai>BUENAS TARDES</srai></template>
 	</category>
-	<!-- BUENAS NOCHES SRAI REDUCTIONS -->
 	<category>
 		<pattern>BUENAS NOCHES *</pattern>
-		<template><srai>buenas noches</srai></template>
-	</category>
-	<!-- HOLA SRAI REDUCTIONS -->
+		<template><srai>BUENAS NOCHES</srai></template>
+	</category>-->
 	<category>
 		<pattern>BUENAS</pattern>
-		<template><srai>hola</srai></template>
+		<template><srai>HOLA</srai></template>
 	</category>
 	<category>
 		<pattern>* BUENAS</pattern>
-		<template><srai>hola</srai></template>
+		<template><srai>HOLA</srai></template>
 	</category>
-	<!-- PHRASES FOR ADIOS -->
 	<category>
 		<pattern>ADIOS</pattern>
 		<template><random>
@@ -92,7 +86,6 @@
 			<li>Gracias por conversar conmigo.</li>
 		</random></template>
 	</category>
-	<!-- PHRASES FOR BUENOS DIAS -->
 	<category>
 		<pattern>BUENOS DIAS</pattern>
 		<template><random>
@@ -100,7 +93,6 @@
 			<li>Buenos días. ¿En qué puedo ayudarte?</li>
 		</random></template>
 	</category>
-	<!-- PHRASES FOR BUENAS TARDES -->
 	<category>
 		<pattern>BUENAS TARDES</pattern>
 		<template><random>
@@ -108,7 +100,6 @@
 			<li>Buenas tardes. ¿En qué puedo ayudarte?</li>
 		</random></template>
 	</category>
-	<!-- PHRASES FOR BUENAS NOCHES -->
 	<category>
 		<pattern>BUENAS NOCHES</pattern>
 		<template><random>
@@ -116,11 +107,18 @@
 			<li>Buenas noches. ¿En qué puedo ayudarte?</li>
 		</random></template>
 	</category>
-	<!-- PHRASES FOR HOLA -->
 	<category>
 		<pattern>HOLA</pattern>
 		<template><random>
 			<li>Hola.</li>
+			<li>Buenas.</li>
+		</random></template>
+	</category>
+	<category>
+		<pattern>ES UN PLACER CONVERSAR CONTIGO</pattern>
+		<template><random>
+			<li>El placer es mío.</li>
+			<li>Es muy amable por tu parte.</li>
 		</random></template>
 	</category>
 </aiml>
