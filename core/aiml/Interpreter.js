@@ -2,7 +2,7 @@
 /** @module core/aiml/Interpreter */
 
 // Dependencies
-var AIMLInterpreter = require("aimlinterpreter");
+var AIML = require("aiml");
 var Messages = require("../logger/Messages");
 var os = require("os");
 
@@ -22,6 +22,7 @@ var Interpreter = (function() {
 		messages.debug("Creating AIMLInterpreter...");
 		var interpreter = new AIMLInterpreter(config.interpreter.data);
 		messages.debug("Interpreter created.");
+		
 		/**
 		 * Obtiene el intéprete.
 		 * @access public

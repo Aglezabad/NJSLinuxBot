@@ -23,7 +23,7 @@
 			"./aiml/LinuxBot/bot_profile.aiml",
 			"./aiml/LinuxBot/default.aiml",
 			"./aiml/LinuxBot/salutations.aiml"
-		]		
+		]
 	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }
