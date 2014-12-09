@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+var app = require('../app');
+
+// Configurations
+var config = require("../config.json");
+var pack = require("../package.json");
+
+// Functions
+/**
+ * Función que envía el saludo de bienvenida en el CLI.
+ * @access public
+ * @method consoleGreeting
+ * @param {String} name
+ * @param {String} version
+ */
+function consoleGreeting(name, version){
+	console.log("=========================================".bold);
+	console.log(" _   _    ___ _____  ______       _   \n".bold+
+		"| \\ | |  |_  /  ___| | ___ \\     | |  \n".bold+
+		"|  \\| |    | \\ `--.  | |_/ / ___ | |_ \n".bold+
+		"| . ` |    | |`--. \\ | ___ \\/ _ \\| __|\n".bold+
+		"| |\\  |/\\__/ /\\__/ / | |_/ / (_) | |_ \n".bold+
+		"\\_| \\_/\\____/\\____/  \\____/ \\___/ \\__|\n".bold);
+	console.log("-----------------------------------------".bold);
+	console.log((name+ "\t Version: " +version).bold);
+	console.log("=========================================".bold);
+}
+
+consoleGreeting(pack.name, pack.version);
+app();
