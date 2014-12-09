@@ -1,26 +1,24 @@
 {
-  "name": "NJSBot-PFG",
+  "name": "NJSLinuxBot",
   "description": "AI bot made for Final Degree Project of Ángel González based on Hollywell's Google Talk Bot, Hubot GTalk adapter and ALICE.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "GPLv3",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aglezabad/njsrebot-pfg.git"
+    "url": "https://github.com/Aglezabad/NJSLinuxBot.git"
   },
   "scripts": {
-    "start": "node --harmony njsbot.js"
+    "start": "./bin/njsbot --harmony"
   },
   "engines": {
     "node": "0.10.29"
   },
   "dependencies": {
-    "node-xmpp-client": "latest",
-    "node-xmpp-core": "latest",
-    "node-stringprep": "latest",
-    "ltx": "latest",
-    "colors": "latest",
-    "moment": "latest",
-    "aiml": "latest"
+    "aimlinterpreter": "^0.1.3",
+    "colors": "^1.0.3",
+    "node-xmpp-client": "^1.0.0-alpha18",
+    "node-xmpp-core": "^1.0.0-alpha10",
+    "winston": "^0.8.3"
   }
 }

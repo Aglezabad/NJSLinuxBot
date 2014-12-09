@@ -1,5 +1,11 @@
 {
-	"level": "debug",
+	"logger":{
+		"level": "debug",
+		"filename": "./logs/njsbot.log",
+		"exception":{
+			"filename": "./logs/njsbot-exceptions.log"
+		}
+	},
 	"client":{
 		"jid": "nodespabot@gmail.com",
 		"service": "hangouts",
