@@ -1,5 +1,3 @@
-'use strict';
-
 /** @module core/xmpp/ClientIO */
 
 // Dependencies
@@ -164,7 +162,7 @@ var ClientIO = (function() {
 				.c("cha:active", {"xmlns:cha": "http://jabber.org/protocol/chatstates"});
 			messages.debug("Sending response: " + message.toString());
 			client.send(message);
-		}
+		};
 
 		/**
 		 * Realiza el envío de elementos XML ya construidos.
@@ -176,8 +174,8 @@ var ClientIO = (function() {
 		this.sendElement = function(element){
 			messages.debug("Sending response: " + element.toString());
 			client.send(element);
-		}
-	}  
+		};
+	};  
 })(); 
 
 

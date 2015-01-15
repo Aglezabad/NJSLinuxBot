@@ -1,5 +1,3 @@
-"use strict";
-
 /** @module core/xmpp/Element */
 
 var Messages = require("../logger/Messages");

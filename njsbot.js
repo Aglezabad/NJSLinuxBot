@@ -1,5 +1,3 @@
-'use strict';
-
 var Messages = require("./core/logger/Messages"),
 
 // Configurations
@@ -26,6 +24,8 @@ function startBot(){
 	var client = new Client(config, process.env.PASSWORD).getClient(),
 	interpreter = new Interpreter(config).getInterpreter(),
 	clientio = new ClientIO();
+
+	interpreter.loadAIMLFilesIntoArray(config.interpreter.files);
 
 	client.on('online', function(){
 		clientio.online(config);

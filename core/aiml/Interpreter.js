@@ -2,7 +2,7 @@
 /** @module core/aiml/Interpreter */
 
 // Dependencies
-var AIML = require("aiml");
+var AIMLInterpreter = require("aimlinterpreter");
 var Messages = require("../logger/Messages");
 var os = require("os");
 
@@ -32,7 +32,7 @@ var Interpreter = (function() {
 		this.getInterpreter = function(){
 			return interpreter;
 		};
-	}  
+	};  
 })(); 
 
 module.exports = Interpreter;

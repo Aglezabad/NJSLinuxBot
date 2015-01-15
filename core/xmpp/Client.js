@@ -1,5 +1,3 @@
-'use strict';
-
 /** @module core/xmpp/Client */
 
 //Dependencies
@@ -80,8 +78,8 @@ var ClientWrapper = (function() {
         	messages.debug("Setting client keepalive...");
         	client.connection.socket.setKeepAlive(enable || DEFAULT_KEEPALIVE_SET, time || DEFAULT_KEEPALIVE_TIMEOUT);
         	messages.debug("Setting client keepalive...");
-        }
-    }  
+        };
+    };  
 })();
 
 module.exports = ClientWrapper;
