@@ -39,7 +39,7 @@ La aplicación no tiene un funcionamiento correcto debido a la dependencia aimli
 
 * Por fallos de implementación propios, el bot podría confundir temas cuando conversa con varios usuarios de forma simultánea.
 
-Todo ello será solventado con el desarrollo de un intérprete para NodeJS denominado ProgramJS, basado en ProgramAB creado por el Dr. Wallace. También se solventarán los problemas de implementación, realizando desde cero un nuevo cliente, que está disponible en la rama "new-client".
+Todo ello será solventado con el desarrollo de un intérprete para NodeJS denominado (Program-JS)[https://github.com/Aglezabad/Program-JS], basado en ProgramAB creado por el Dr. Wallace. También se solventarán los problemas de implementación, realizando desde cero un nuevo cliente, que está disponible en la rama "new-client".
 
 
 ##Licencia
