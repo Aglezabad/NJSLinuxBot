@@ -17,7 +17,7 @@ var Interpreter = (function() {
 	return function(config) {
 		if ( singleInstance ) return singleInstance; 
 		singleInstance = this;
-		config.interpreter.data.language = "Javascript";
+		config.interpreter.data.language = "javascript";
 		config.interpreter.data.os = os.platform();
 		messages.debug("Creating AIMLInterpreter...");
 		var interpreter = new AIMLInterpreter(config.interpreter.data);

@@ -1,0 +1,11 @@
+{
+	"name": "SARA AIML AI Bot - Spanish - Sistema Artificial de Respuestas Automáticas. By Adam Codony - Not Working",
+	"files":[
+		"./aiml/SARA/default.aiml",
+		"./aiml/SARA/nombres.aiml",
+		"./aiml/SARA/numeros.aiml",
+		"./aiml/SARA/sara.aiml",
+		"./aiml/SARA/sara_srai.aiml",
+		"./aiml/SARA/sexo.aiml"
+	]
+}

@@ -18,12 +18,7 @@
 			"country": "España",
 			"city": "Madrid"
 		},
-		"files":[
-			"./aiml/LinuxBot/ai.aiml",
-			"./aiml/LinuxBot/bot_profile.aiml",
-			"./aiml/LinuxBot/default.aiml",
-			"./aiml/LinuxBot/salutations.aiml"
-		]
+		"ai":"./aiml/LinuxBot/aiml.json"
 	},
 	"statusMessage": "Bievenido a LinuxBot, el bot que muestra información sobre GNU/Linux"
 }

@@ -19,6 +19,14 @@
 		<template>La Inteligencia Artificial es la rama de la ingeniería y la ciencia que estudia cómo hacer que las máquinas piensen.</template>
 	</category>
 	<category>
+		<pattern>QUIÉN CREO * AIML</pattern>
+		<template><srai>QUIEN CREO <star/> AIML</srai></template>
+	</category>
+	<category>
+		<pattern>QUIEN CREÓ * AIML</pattern>
+		<template><srai>QUIEN CREO <star/> AIML</srai></template>
+	</category>
+	<category>
 		<pattern>QUIÉN CREÓ * AIML</pattern>
 		<template><srai>QUIEN CREO <star/> AIML</srai></template>
 	</category>
@@ -34,11 +42,11 @@
 		</random></template>
 	</category>
 	<category>
-		<pattern>NO ERES INMORTAL</pattern>
-		<template>Cualquier software puede permanecer indefinidamente si evoluciona correctamente.</template>
-	</category>
-	<category>
 		<pattern>NO ERES INMORTAL *</pattern>
 		<template><srai>NO ERES INMORTAL</srai></template>
+	</category>
+	<category>
+		<pattern>NO ERES INMORTAL</pattern>
+		<template>Cualquier software puede permanecer indefinidamente si evoluciona correctamente.</template>
 	</category>
 </aiml>

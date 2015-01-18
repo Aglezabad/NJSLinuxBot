@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="1.0">
+	<!-- -->
+	<!-- LinuxBot AIML files created by Ángel González -->
+	<!-- Based on AIML bots ALICE (Dr. Wallace) and SARA (Adam Codony) -->
+	<!-- This program is open source code released under -->
+	<!-- the terms of the GNU General Public License     -->
+	<!-- as published by the Free Software Foundation.   -->
+	<!-- Complies with AIML 1.0 Tag Set Specification -->
+	<!-- as adopted by the ALICE A.I. Foundation.  -->
+	<!-- Last modified 18/01/2015 -->
+	<!-- -->
+	<category>
+		<pattern>QUÉ ES SUDO</pattern>
+		<template><srai>QUE ES SUDO</srai></template>
+	</category>
+	<category>
+		<pattern>QUE ES SUDO</pattern>
+		<template>Sudo es un programa disponible en los sistemas UNIX que permite a los usuarios ejecutar programas con los privilegios de seguridad de otro usuario (normalmente el usuario root) de manera segura.</template>
+	</category>
+	<category>
+		<pattern>QUIÉN * SUDO</pattern>
+		<template><srai>QUIEN <star/> SUDO</srai></template>
+	</category>
+	<category>
+		<pattern>QUIEN * SUDO</pattern>
+		<template>Sudo fue escrito originalmente por Bob Coggeshall y Cliff Spencer en 1980, en el departamento de ciencias de la computación de la Universidad estatal de Nueva York.</template>
+	</category>
+	<category>
+		<pattern>CÓMO * SUDO</pattern>
+		<template><srai>COMO <star/> SUDO</srai></template>
+	</category>
+	<category>
+		<pattern>COMO * SUDO</pattern>
+		<template>El uso básico de sudo es ejecutar un comando como root, que se hace de la siguiente forma:
+		sudo [comando]
+		Para ejecutar un comando como otro usuario, basta realizar esta llamada:
+		sudo -u [usuario] [comando]</template>
+	</category>
+</aiml>
