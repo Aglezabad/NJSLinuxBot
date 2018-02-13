@@ -1,13 +1,15 @@
-#NJSLinuxBot
+# NJSLinuxBot
+
+**DEPRECATED: Google Hangouts XMPP services is closed. This bot is not compatible with latest Google Hangouts.**
 
 AI bot made for Final Degree Project of Ángel González based on Hollywell's Google Talk Bot, Hubot GTalk adapter and ALICE.
 Bot de inteligencia artificial para el Proyecto de Fin de Grado de Ángel González basado en el bot de Google Talk de Hollywell, el adaptador GTalk de Hubot y en ALICE.
 
-##Instalación
+## Instalación
 
 **ADVERTENCIA:**Debido a las depedencias usadas, solo se garantiza su funcionamiento en GNU/Linux. En Windows se ha realizado pruebas de funcionamiento sin éxito y en otros sistemas no se sabe si dará el resultado esperado. Con el tiempo es posible que esto cambie.
 
-###Linux
+### Linux
 *Es necesario tener instalado NodeJS, Git y NPM. Para su instalación, consulte los manuales disponibles en las webs de los programas.*
 
 Para instalar esta aplicación, procedemos a la descarga del código mediante Git o en el enlace de descarga de Github:
@@ -26,7 +28,7 @@ Por último, podemnos modificar los parámetros por defecto del fichero config.j
 
 Para conversar con el bot, basta con abrir GTalk (Hangouts) y agregar la cuenta del bot, como si se tratase de un usuario común.
 
-##Fallos y errores detectados.
+## Fallos y errores detectados.
 La aplicación no tiene un funcionamiento correcto debido a la dependencia aimlinterpreter y a mi propia implementación, que descubrí tarde que no era la más apropiada, causante de los siguientes problemas:
 
 * Por la dependencia domjs, los ficheros AIML no pueden contener etiquetas que no cumplan con XML, como el salto de línea de HTML (aceptado en la implementación AIML 2.0). 
@@ -42,5 +44,5 @@ La aplicación no tiene un funcionamiento correcto debido a la dependencia aimli
 Todo ello será solventado con el desarrollo de un intérprete para NodeJS denominado (Program-JS)[https://github.com/Aglezabad/Program-JS], basado en ProgramAB creado por el Dr. Wallace. También se solventarán los problemas de implementación, realizando desde cero un nuevo cliente, que está disponible en la rama "new-client".
 
 
-##Licencia
+## Licencia
 Esta aplicación está licenciada bajo la GPLv3. El texto de la misma se encuentra disponible en el fichero LICENSE.txt.
