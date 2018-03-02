@@ -3,7 +3,8 @@
 **DEPRECATED: Google Hangouts XMPP service is closed. This bot is not compatible with latest Google Hangouts.**
 
 AI bot made for ~~Final Degree Project of Ángel González~~ (Final Project topic changed) based on Hollywell's Google Talk Bot, Hubot GTalk adapter and ALICE.
-Bot de inteligencia artificial para el Proyecto de Fin de Grado de Ángel González basado en el bot de Google Talk de Hollywell, el adaptador GTalk de Hubot y en ALICE.
+
+Bot de inteligencia artificial para el ~~Proyecto de Fin de Grado de Ángel González~~ (el tema del proyecto cambió) basado en el bot de Google Talk de Hollywell, el adaptador GTalk de Hubot y en ALICE.
 
 ## Instalación
 
